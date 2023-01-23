@@ -70,7 +70,7 @@ document.getElementById("wordpress").addEventListener("mouseover", function () {
 document.getElementById("wordpress").addEventListener("mouseout", function () {
   textWordpress.innerHTML = " ";
 });
-(function() {
+(function () {
 
   // VARIABLES
   const timeline = document.querySelector(".timeline ol"),
@@ -137,7 +137,7 @@ document.getElementById("wordpress").addEventListener("mouseout", function () {
   function animateTl(scrolling, el, tl) {
     let counter = 0;
     for (let i = 0; i < el.length; i++) {
-      el[i].addEventListener("click", function() {
+      el[i].addEventListener("click", function () {
         if (!arrowPrev.disabled) {
           arrowPrev.disabled = true;
         }
@@ -164,16 +164,16 @@ document.getElementById("wordpress").addEventListener("mouseout", function () {
       });
     }
   }
-
-  // ADD SWIPE SUPPORT FOR TOUCH DEVICES
+ 
+ // ADD SWIPE SUPPORT FOR TOUCH DEVICES
   function setSwipeFn(tl, prev, next) {
     const hammer = new Hammer(tl);
     hammer.on("swipeleft", () => next.click());
     hammer.on("swiperight", () => prev.click());
   }
-
+ 
   // ADD BASIC KEYBOARD FUNCTIONALITY
-  function setKeyboardFn(prev, next) {
+ function setKeyboardFn(prev, next) {
     document.addEventListener("keydown", (e) => {
       if ((e.which === 37) || (e.which === 39)) {
         const timelineOfTop = timeline.offsetTop;
@@ -188,6 +188,12 @@ document.getElementById("wordpress").addEventListener("mouseout", function () {
         }
       }
     });
-  }
+  } 
+ 
+})(); 
+const burger = document.querySelector('.navburger');
+ const burgerBar = document.querySelector('.navbar-collapse'); 
+ burger.addEventListener('click', () => { 
+  burgerBar.classList.toggle('show'); 
 
-})();
+})
